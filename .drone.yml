@@ -1,0 +1,39 @@
+kind: pipeline
+type: kubernetes
+name: default
+
+steps:
+- name: build
+  image: golang
+  volumes:
+  - name: deps
+    path: /go
+  commands:
+  - go build hello.go
+  - pwd
+  - ls
+  
+- name: test
+  image: golang
+  volumes:
+  - name: deps
+    path: /go
+  commands:
+  - ls
+  - pwd
+  - go mod init hello_test.go
+  - go test
+  
+- name: publish
+  image: plugins/docker
+  settings:
+    repo: munkys123/drone-demo
+    tags: ${DRONE_COMMIT}
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+
+volumes:
+- name: deps
+  temp: {}
