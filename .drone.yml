@@ -27,7 +27,7 @@ steps:
 - name: publish
   image: plugins/docker
   settings:
-    repo: munkys123/drone-demo
+    repo: peterhack/drone-demo
     tags: ${DRONE_COMMIT}
     username:
       from_secret: docker_username
