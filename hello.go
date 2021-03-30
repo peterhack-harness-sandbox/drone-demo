@@ -6,7 +6,7 @@ import "fmt"
 func Hello() string {
     //return
     return "Hello, world"
-    //change comment 1
+    //change comment 2
     //time.Sleep(5 * time.Minute)
     
 }
