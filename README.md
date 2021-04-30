@@ -1,3 +1,3 @@
 # drone-demo
-hello Polar Squad
+hello team
 
