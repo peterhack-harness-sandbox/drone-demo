@@ -1,3 +1,2 @@
 # drone-demo
-Hi Aaron
 
